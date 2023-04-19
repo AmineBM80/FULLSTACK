@@ -66,7 +66,7 @@ ORDER BY chiffre_affaire DESC;
 
 -- Supprimer les plats non actifs de la base de données :
 
-DELETE FROM plat WHERE actif = 0;
+DELETE FROM plat WHERE active = 'non';
 
 -- ----------- --
 
@@ -78,8 +78,8 @@ DELETE FROM commande WHERE etat = 'Livrée';
 
 -- Ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie :
 
-INSERT INTO categorie (nom) VALUES ('Nouvelle Catégorie');
-INSERT INTO plat (nom, description, prix, id_categorie, actif) VALUES ('Nouveau Plat', 'Description du nouveau plat', 10.99, (SELECT id FROM categorie WHERE nom = 'Nouvelle Catégorie'), 1);
+INSERT INTO categorie (libelle) VALUES ('Nouvelle Catégorie');
+INSERT INTO plat (libelle, description, prix, id_categorie, active) VALUES ('Nouveau Plat', 'Description du nouveau plat', 10.99, (SELECT id FROM categorie WHERE nom = 'Nouvelle Catégorie'), 'yes');
 
 -- ----------- --
 

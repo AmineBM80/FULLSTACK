@@ -20,7 +20,7 @@ JOIN categorie ON plat.id_categorie = categorie.id;
 SELECT categorie.nom_categorie, COUNT(plat.id)
 FROM categorie
 JOIN plat ON plat.id_categorie = categorie.id
-WHERE plat.actif = 1
+WHERE plat.active = 'yes'
 GROUP BY categorie.nom_categorie;
 
 -- ----------- --

@@ -79,7 +79,7 @@ DELETE FROM commande WHERE etat = 'Livrée';
 -- Ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie :
 
 INSERT INTO categorie (libelle) VALUES ('Nouvelle Catégorie');
-INSERT INTO plat (libelle, description, prix, id_categorie, active) VALUES ('Nouveau Plat', 'Description du nouveau plat', 10.99, (SELECT id FROM categorie WHERE nom = 'Nouvelle Catégorie'), 'yes');
+INSERT INTO plat (libelle, description, prix, id_categorie, active) VALUES ('Nouveau Plat', 'Description du nouveau plat', 10.99, (SELECT id FROM categorie WHERE libelle = 'Nouvelle Catégorie'), 'yes');
 
 -- ----------- --
 
